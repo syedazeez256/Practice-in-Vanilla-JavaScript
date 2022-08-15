@@ -1,204 +1,234 @@
-// Creating object
-const azeez = {
-  airline: "Pak air lines",
-  iataCode: "PK",
-  bookings: [],
-  book(flightnum, name) {
-    console.log(
-      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightnum}`
-    );
-    this.bookings.push({ flight: `${this.iataCode}${flightnum}`, name });
-  },
-};
-// creating the new onject
-const eurowrings = {
-  airline: "Eurowings",
-  iataCode: "LW",
-  bookings: [],
-};
-console.log(azeez.book(23, "Azez"));
+// // Creating object
+// const azeez = {
+//   airline: "Pak air lines",
+//   iataCode: "PK",
+//   bookings: [],
+//   book(flightnum, name) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightnum}`
+//     );
+//     this.bookings.push({ flight: `${this.iataCode}${flightnum}`, name });
+//   },
+// };
+// // creating the new onject
+// const eurowrings = {
+//   airline: "Eurowings",
+//   iataCode: "LW",
+//   bookings: [],
+// };
+// console.log(azeez.book(23, "Azez"));
 
-// gettting the property of object
-const airline = ["airline"];
-console.log(eurowrings[airline]);
+// // gettting the property of object
+// const airline = ["airline"];
+// console.log(eurowrings[airline]);
 
-// deleting the property of Object
-// delete eurowrings.iataCode;
+// // deleting the property of Object
+// // delete eurowrings.iataCode;
+// // console.log(eurowrings);
+
+// // simply calling the object property method
+// azeez.book(23, "Azeez");
+// console.log(azeez);
+
+// // stored in new variable and make it a simple function
+// const book = azeez.book;
+// const arrAirlines = [456, "Qasim"];
+
+// // call method
+// book.call(eurowrings, 23, "haider");
+
+// // apply method
+// book.apply(azeez, arrAirlines);
+
+// // bind method
+// const bookEW = book.bind(eurowrings);
+// const bookPK = book.bind(azeez);
+// bookEW(23, "Azam");
+// bookPK(34, "Aziz");
 // console.log(eurowrings);
+// const bookEW23 = book.bind(eurowrings, 99);
+// bookEW23("Pakistan");
 
-// simply calling the object property method
-azeez.book(23, "Azeez");
-console.log(azeez);
+// // creating another Object
+// myObj = {
+//   name: "John",
+//   age: 30,
+//   cars: {
+//     car1: "Ford",
+//     car2: "BMW",
+//     car3: "Fiat",
+//   },
+// };
 
-// stored in new variable and make it a simple function
-const book = azeez.book;
-const arrAirlines = [456, "Qasim"];
+// console.log(myObj.cars.car2);
+// console.log(myObj.cars["car3"]);
 
-// call method
-book.call(eurowrings, 23, "haider");
+// // Arrays in Objects / Nested Arrays and objects
+// const anotherObj = {
+//   name: "John",
+//   age: 30,
+//   cars: [
+//     { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
+//     { name: "BMW", models: ["320", "X3", "X5"] },
+//     { name: "Fiat", models: ["500", "Panda"] },
+//   ],
+// };
 
-// apply method
-book.apply(azeez, arrAirlines);
+// // To access arrays inside arrays, use a for-in loop for each array:
+// let x;
+// for (let i in anotherObj.cars) {
+//   x += "<h1>" + anotherObj.cars[i].name + "</h1>";
+//   for (let j in anotherObj.cars[i].models) {
+//     x += anotherObj.cars[i].models[j];
+//   }
+// }
 
-// bind method
-const bookEW = book.bind(eurowrings);
-const bookPK = book.bind(azeez);
-bookEW(23, "Azam");
-bookPK(34, "Aziz");
-console.log(eurowrings);
-const bookEW23 = book.bind(eurowrings, 99);
-bookEW23("Pakistan");
+// console.log(x);
 
-// creating another Object
-myObj = {
-  name: "John",
-  age: 30,
-  cars: {
-    car1: "Ford",
-    car2: "BMW",
-    car3: "Fiat",
-  },
-};
+// // creating the new onject
+// const person = {
+//   name: "John",
+//   age: 30,
+//   city: "New York",
+// };
 
-console.log(myObj.cars.car2);
-console.log(myObj.cars["car3"]);
+// // looping in Object
+// let txt = "";
+// for (let x in person) {
+//   txt += person[x] + " ";
+// }
 
-// Arrays in Objects / Nested Arrays and objects
-const anotherObj = {
-  name: "John",
-  age: 30,
-  cars: [
-    { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
-    { name: "BMW", models: ["320", "X3", "X5"] },
-    { name: "Fiat", models: ["500", "Panda"] },
-  ],
-};
+// console.log(txt);
 
-// To access arrays inside arrays, use a for-in loop for each array:
-let x;
-for (let i in anotherObj.cars) {
-  x += "<h1>" + anotherObj.cars[i].name + "</h1>";
-  for (let j in anotherObj.cars[i].models) {
-    x += anotherObj.cars[i].models[j];
-  }
-}
+// // converted the Object to array
+// const person1 = {
+//   name: "John",
+//   age: 30,
+//   city: "New York",
+// };
 
-console.log(x);
+// const myArray = Object.values(person1);
+// console.log(myArray);
 
-// creating the new onject
-const person = {
-  name: "John",
-  age: 30,
-  city: "New York",
-};
+// // Getters and Setters
 
-// looping in Object
-let txt = "";
-for (let x in person) {
-  txt += person[x] + " ";
-}
+// // Create an object:
+// const person2 = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   language: "en",
+//   get lang() {
+//     return this.language;
+//   },
+//   set lang(lng) {
+//     this.language = lng;
+//   },
+// };
 
-console.log(txt);
+// person2.language = "EE";
 
-// converted the Object to array
-const person1 = {
-  name: "John",
-  age: 30,
-  city: "New York",
-};
+// console.log(person2.lang);
+// console.log(person2.language);
 
-const myArray = Object.values(person1);
-console.log(myArray);
+// // Define object
+// const obj = { counter: 0 };
 
-// Getters and Setters
+// // Define setters and getters
+// Object.defineProperty(obj, "reset", {
+//   get: function () {
+//     this.counter = 0;
+//   },
+// });
+// Object.defineProperty(obj, "increment", {
+//   get: function () {
+//     this.counter++;
+//   },
+// });
+// Object.defineProperty(obj, "decrement", {
+//   get: function () {
+//     this.counter--;
+//   },
+// });
+// Object.defineProperty(obj, "add", {
+//   set: function (value) {
+//     this.counter += value;
+//   },
+// });
+// Object.defineProperty(obj, "subtract", {
+//   set: function (value) {
+//     this.counter -= value;
+//   },
+// });
+// console.log({ obj: obj.__proto__ });
+// // Play with the counter:
+// obj.reset;
+// obj.add = 5;
+// obj.subtract = 3;
+// obj.increment;
+// obj.decrement;
 
-// Create an object:
-const person2 = {
-  firstName: "John",
-  lastName: "Doe",
-  language: "en",
-  get lang() {
-    return this.language;
-  },
-  set lang(lng) {
-    this.language = lng;
-  },
-};
+// console.log(obj);
 
-person2.language = "EE";
+// function Person(first, last, age, eye) {
+//   this.firstName = first;
+//   this.lastName = last;
+//   this.age = age;
+//   this.eyeColor = eye;
+// }
 
-console.log(person2.lang);
-console.log(person2.language);
+// const myFather = new Person("John", "Doe", 50, "blue");
+// const myMother = new Person("Sally", "Rally", 48, "green");
+// console.log(myFather.lastName);
 
-// Define object
-const obj = { counter: 0 };
+// function Person1(first, last, age, eyecolor) {
+//   this.firstName = first;
+//   this.lastName = last;
+//   this.age = age;
+//   this.eyeColor = eyecolor;
+// }
 
-// Define setters and getters
-Object.defineProperty(obj, "reset", {
-  get: function () {
-    this.counter = 0;
-  },
-});
-Object.defineProperty(obj, "increment", {
-  get: function () {
-    this.counter++;
-  },
-});
-Object.defineProperty(obj, "decrement", {
-  get: function () {
-    this.counter--;
-  },
-});
-Object.defineProperty(obj, "add", {
-  set: function (value) {
-    this.counter += value;
-  },
-});
-Object.defineProperty(obj, "subtract", {
-  set: function (value) {
-    this.counter -= value;
-  },
-});
-console.log({ obj: obj.__proto__ });
-// Play with the counter:
-obj.reset;
-obj.add = 5;
-obj.subtract = 3;
-obj.increment;
-obj.decrement;
+// Person1.prototype.nationality = "English";
+// console.log(new Person1().__proto__);
 
-console.log(obj);
+// // The Arguments Object
+// x = findMax(1, 123, 500, 115, 44, 88);
 
-function Person(first, last, age, eye) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eye;
-}
+// function findMax() {
+//   let max = -Infinity;
+//   for (let i = 0; i < arguments.length; i++) {
+//     if (arguments[i] > max) {
+//       max = arguments[i];
+//     }
+//   }
+//   return max;
+// }
 
-const myFather = new Person("John", "Doe", 50, "blue");
-const myMother = new Person("Sally", "Rally", 48, "green");
-console.log(myFather.lastName);
+// const obj = {
+//   a: 10,
+//   b: "azeez",
+//   c: () => {
+//     console.log("-------", this);
+//   },
+// };
 
-function Person1(first, last, age, eyecolor) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eyecolor;
-}
+// obj.c();
+// const arrow = () => {
+//   console.log(this);
+// };
+// console.log(arrow);
 
-Person1.prototype.nationality = "English";
-console.log(new Person1().__proto__);
+const arr = [1, "a", "b", 0, 15];
 
-// The Arguments Object
-x = findMax(1, 123, 500, 115, 44, 88);
+let arr1 = [];
 
-function findMax() {
-  let max = -Infinity;
-  for (let i = 0; i < arguments.length; i++) {
-    if (arguments[i] > max) {
-      max = arguments[i];
+function filter_list(data) {
+  for (let i = 0; i < data.length; i++) {
+    if (typeof data[i] === "number") {
+      arr1.push(data[i]);
     }
   }
-  return max;
+  // return arr1;
 }
+
+filter_list(arr);
+console.log(arr1);
